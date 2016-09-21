@@ -1,5 +1,9 @@
 $(document).ready(function(){
-    $("#searchterm").keyup(function(e){
+    $("#searchterm").keyup(getData);
+    $("#search").click(getData);
+  
+  
+  function getData(e){
         var q = $("#searchterm").val();
         $.getJSON("https://en.wikipedia.org/w/api.php?callback=?",
         {
@@ -16,5 +20,6 @@ $(document).ready(function(){
             $("#results").append("<div class='result'><a href='http://en.wikipedia.org/wiki/" + encodeURIComponent(item.title) + "'target='_blank'><b>" + item.title + "</b></a><br> - " + item.snippet + "...<hr></div>");
           });
         });
-      });
+      }
+    
 });
