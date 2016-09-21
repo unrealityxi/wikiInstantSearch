@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $("#searchterm").keyup(function(e){
         var q = $("#searchterm").val();
-        $.getJSON("http://en.wikipedia.org/w/api.php?callback=?",
+        $.getJSON("https://en.wikipedia.org/w/api.php?callback=?",
         {
           srsearch: q,
           action: "query",
